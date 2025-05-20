@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI tööriist haiglajuhtidele</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 2rem; max-width: 1000px; margin: auto; background-color: #f4f6f6; }
+    h1 { color: #004d40; }
+    h2 { color: #00695c; margin-top: 2em; }
+    .prompt-block { background: #ffffff; border-left: 5px solid #00897b; padding: 1rem; margin: 1.5rem 0; position: relative; }
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    code { display: block; background: #f1f1f1; padding: 0.5rem; margin-top: 0.5rem; white-space: pre-wrap; }
+    .btn-top {
+      display: inline-block;
+      background-color: #26a69a;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      margin: 1rem 0;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <a class="btn-top" href="https://chat.openai.com" target="_blank">Ava ChatGPT</a>
+  <h1>AI‑põhised promptid haiglajuhtidele</h1>
+  <p>Kopeeri sobiv küsimus ja kasuta seda generatiivses AI tööriistas (nt ChatGPT). Vajadusel lisa oma asutuse kontekst, roll või andmeallikad.</p>
+
+  <h2>Strateegiline planeerimine ja innovatsioon</h2>
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Koosta haigla digitaliseerimisstrateegia lühikokkuvõte aastateks 2025–2028, keskendudes patsiendikesksele andmehaldusele ja tehisintellekti integreerimisele tööprotsessidesse.</code>
+  </div>
+
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Milliseid AI‑rakendusi võiksime katsetada haigla eri osakondades (nt radioloogia, erakorraline meditsiin, taastusravi), arvestades personali töökoormust ja andmete kättesaadavust?</code>
+  </div>
+
+  <h2>Juhtimine ja töökorraldus</h2>
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Koosta juhtivarstile memo meeskonnamotivatsiooni tõstmise võimalustest pingelise töökoormuse olukorras, kasutades tõenduspõhiseid meetmeid ja psühhosotsiaalse toe praktikaid.</code>
+  </div>
+
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Millised 3 juhtimisstiili sobivad kõige paremini haiglakeskkonda kriisiolukordades? Too igaühe eelised ja piirangud lühidalt välja.</code>
+  </div>
+
+  <h2>Andmeanalüüs ja kvaliteedinäitajad</h2>
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Loo tabel, mis võrdleb kolme osakonna personali voolavust ja töölt lahkumise põhjuseid viimase 12 kuu jooksul, ning esita soovitused parendamiseks.</code>
+  </div>
+
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Analüüsi eelmise kvartali kaebuste statistikat ja esita 3 soovitust süsteemseks parendamiseks.</code>
+  </div>
+
+  <h2>Koostöö ja partnerlus</h2>
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Kirjelda võimalusi, kuidas haigla võiks teha koostööd kohalike ülikoolide ja iduettevõtetega tehisintellekti rakendamiseks haigla igapäevatöös.</code>
+  </div>
+
+  <div class="prompt-block">
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Koosta infoleht partneritele, milles kirjeldad meie haigla valmisolekut osaleda rahvusvahelistes AI- või digiprojektides. Too välja tugevused ja vajadused.</code>
+  </div>
+
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.innerText = "Kopeeritud!";
+        setTimeout(() => button.innerText = "Kopeeri", 2000);
+      });
+    }
+  </script>
+</body>
+</html>
