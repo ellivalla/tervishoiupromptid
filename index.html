@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tervishoiupromptide mõtlemise tööriist</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; padding: 2rem; max-width: 1000px; margin: auto; background-color: #f9f9f9; }
+    h1 { color: #004d40; }
+    h2 { color: #00695c; margin-top: 2em; }
+    .prompt-block { background: #ffffff; border-left: 5px solid #26a69a; padding: 1rem; margin: 1.5rem 0; position: relative; }
+    .btn-top {
+      display: inline-block;
+      background-color: #26a69a;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      margin: 1rem 0;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .note { font-size: 0.9rem; color: #555; }
+    code { display: block; background: #f1f1f1; padding: 0.5rem; margin-top: 0.5rem; white-space: pre-wrap; }
+    .copy-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="searchInput" onkeyup="filterPrompts()" placeholder="Otsi kategooria või märksõna järgi..." style="width: 100%; padding: 0.75rem; margin: 1rem 0; border: 1px solid #ccc; border-radius: 4px;" />
+
+  <h1>Tervishoiupromptide mõtlemise tööriist</h1>
+  <a class="btn-top" href="https://chat.openai.com" target="_blank">Ava ChatGPT</a>
+  <p>Alljärgnevalt leiad näidispromptid erinevates kategooriates. Kopeeri sobiv küsimus ja kasuta seda generatiivses AI tööriistas. Soovi korral täienda prompti konteksti, rolli või väljundi vormi osas.</p>
+
+
+  <h2>Harjutamiseks</h2>
+
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Olen õde Ida-Tallinna Keskhaiglas ja koolitan noori õdesid. Palun koosta detailne, samm‑sammuline juhend täiskasvanud patsiendile veenikanüüli sisestamiseks: vajalikud vahendid, aseptikareeglid, levinud komplikatsioonid ja ennetusmeetmed. Too esile ka peamised ohumärgid, millele tähelepanu pöörata.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Olen pereõde kohaliku tervisekeskuse diabeedikliinikus ja mul on kolmeaastane patsient, kes alustab esmakordselt insuliiniravi. Palun koostada lihtsas keeles juhend tema emale, kuidas valida süstekoht, valmistada süstal ette ja manustada insuliin subkutaanselt. Lisa levinud vead ja nende vältimine ning meenutusskeem, mis aitab patsiendil õigel ajal süstida.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Ma olen [tööroll, nt. intensiivraviõde] haiglas [asutuse nimi]. Olen alles alustamas ChatGPT kasutamist. Esita 5 parimat prompti, mida [tööroll] saab rakendada oma igapäevatöös võimalikult laia kasutusvaldkonna (nt patsiendi nõustamine, kliinilised protseduurid, dokumenteerimine, meeskonnatöö ja erialane enesetäiendamine) jaoks.</code>
+        </div>
+        
+
+
+  <h2>Dokumenteerimine ja aruanded</h2>
+
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Koosta SOAP‑vormis sissekande kokkuvõte tänasest vahetusest, arvestades järgmisi lühimärkmeid: …</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kirjuta patsiendi välja­skirjutuse juhised lihtsas eesti keeles (B1 tase).</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Tiheda graafikuga öövahetuse kohta kirjuta 150‑sõnaline ülevaade, rõhutades kriitilisi muutusi.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Muuda alltoodud hooldusplaan lühenditega kooskõlas olevaks: …</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Tõlgi inglise­keelne epikriis eesti keelde, hoides meditsiini­terminoloogia täpse.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Loo tabel, mis võrdleb patsiendi vit. näitajaid viimase 72 h jooksul.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kirjuta juhtumiaruanne ametlikus toonis, kirjeldades kukkumisjuhtumit, mis toimus öösel kell 03:15</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Muuda see patsiendi abivahendi juhend pildi­kirjeldustega versiooniks pimedale kasutajale.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kokkuvõte vereanalüüsi tulemustest patsiendi pereliikmele – kasutades näiteid igapäeva­elust.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kontrolli, kas järgmine pediaatriline dokumentatsioon vastab ISBAR‑struktuurile, ja paranda vajadusel.</code>
+        </div>
+
+
+        <h2>Patsiendi suhtlus ja harimine</h2>
+
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Selgita 80 a patsiendile, miks on antikoagulandi võtmise regulaarsus oluline (≤ 120 sõna).</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Koosta visuaalne juhend (bullet‑loend) kõndimiskepi õigeks seadistamiseks.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kirjuta toetav SMS‑stiilis meeldetuletus diabeedi­patsiendile glükoosi mõõtmiseks.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Paku 5 metafoori, millega selgitada ‘nõrgenenud immuunsus’ lapsevanemale.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Genereeri 3 küsimust, millega hinnata patsiendi arusaamist inhalatsiooni­teraapiast.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Loo kahe­minutilise õpetus­video skript suulise hügieeni kohta lamavale patsiendile.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kirjuta brošüüri lõik, mis motiveerib südame­opist taastuvaid patsiente füsioteraapias osalema.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Muuda see meditsiini­släng ‘inim­keelseks’ 16‑aastasele noorukile: …</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Koosta pidžaama vahetuse juhend dementsele patsiendile piktogrammide kujul.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Soovita viis avatud küsimust, et hinnata patsiendi valu­taset kultuuriliselt tundlikult.</code>
+        </div>
+  
+        <h2>Otsuse­tugi ja kliiniline ohutus</h2>
+
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Koosta kontroll‑loend (checklist) kateetri hoolduse aseptika võtmetegevustest.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Loetle varased sepsise tunnused koos viiteväärtustega.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Analüüsi südamestimulaatoriga (pacemaker) patsiendi hommikusi elulisi näitajaid (vital signs) ning anna soovitus, 
+              millistel juhtudel ja millal tuleks arsti teavitada..</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Loo protokolli­mustand valuravimi titratsiooni jaoks, tuginedes uusimatele ESC juhistele.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Koosta voogdiagramm (flow‑chart) post‑op tromboosi­profülaktika otsustamiseks.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Võrdle kahte haava­sidemete varianti (hüdrokiolloid vs. vaht) ja anna soovitus konkreetsel juhul.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Hinnang: kas patsient vastab frailty‑skaala kriteeriumile ≥ 5, kui tal on järgmised näitajad …?</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kirjelda 3 punast lipukest IV‑antibiootikumi infusiooni jälgimisel.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Arvuta automaatselt NEWS2 skoor, kui sisestan näitajad vormina.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Paku soovituslik vedeliku tasakaalu graafik AACN standardi järgi.</code>
+        </div>
+  
+        <h2>Töö­korraldus & ajajuhtimine</h2>
+
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Optimeeri alltoodud tööde järjekord 12 h päevavahetuse alguses, minimeerides ümber­käimisi.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Loo automaatse meeldetuletuse tekst iga 4 h järel pööramiseks intensiivravil.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kirjuta meeskonna Slacki kanalisse lühike kokkuvõte eelseisvatest koolitus­taotlustest.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Genereeri Exceli‑sobilik tabel voodi­koormuse jälgimiseks 7 päeva lõikes.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Koosta 200‑täheline telefonisõnum kodu­õele, kui väljakutsete järjekord muutub.</code>
+        </div>
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Paku 3 prompti, millega suhelda kolleegiga konfliktiolukorras professionaalselt.</code>
+        </div>
+        
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Planeeri 15-minutiline grupibriifing, kasutades kuldset ringi (miks–mida–kuidas) raamistikku.</code>
+        </div>
+        
+        
+        <div class="prompt-block">
+            <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+            <code>Kirjuta ülemõele ühelauseline staatuseteade kriitilise tarnete puuduse kohta.</code>
+        </div>
+        
+
+  <p class="note">💡 Lisa roll ja kontekst (nt “Sa oled kogenud intensiivravi õde…”), piira vormingut (“200 sõna”, “tabelina”), või jäta sisse täpsustused (“Kui fakt pole kindel, küsi lisateavet.”). Head katsetamist!</p>
+
+  <script>
+    function copyPrompt(button) {
+      const text = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        button.innerText = "Kopeeritud!";
+        setTimeout(() => button.innerText = "Kopeeri", 2000);
+      });
+    }
+  </script>
+
+  <script>
+    function filterPrompts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const blocks = document.querySelectorAll('.prompt-block');
+      const headers = document.querySelectorAll('h2');
+
+      blocks.forEach(block => {
+        const text = block.innerText.toLowerCase();
+        block.style.display = text.includes(input) ? '' : 'none';
+      });
+
+      headers.forEach(header => {
+        const category = header.innerText.toLowerCase();
+        const visible = Array.from(header.nextElementSibling?.classList.contains('prompt-block') ? [header.nextElementSibling] : [])
+          .filter(el => el.style.display !== 'none').length > 0;
+
+        // Hide headers only if no block is visible beneath
+        let sibling = header.nextElementSibling;
+        let hasVisible = false;
+        while (sibling && sibling.classList.contains('prompt-block')) {
+          if (sibling.style.display !== 'none') hasVisible = true;
+          sibling = sibling.nextElementSibling;
+        }
+        header.style.display = hasVisible ? '' : 'none';
+      });
+    }
+  </script>
+
+</body>
+</html>
