@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Õenduse AI-tööriist juhendite koostamiseks</title>
+  <style>
+    :root{
+      --bg:#f4f6f6; --ink:#0b3d3a; --ink2:#215e59; --pri:#00897b; --pri2:#26a69a; --btn:#00796b; --card:#ffffff; --code:#f1f1f1;
+    }
+    body{font-family: Arial, sans-serif; line-height:1.6; padding:2rem; max-width:1100px; margin:auto; background:var(--bg); color:#222}
+    h1{color:var(--ink); margin-bottom:.25rem}
+    h2{color:var(--ink2); margin-top:2rem}
+    p.lead{color:#333; max-width:900px}
+    .tip{font-size:.95rem; color:#444; background:#eaf3f2; border-left:4px solid var(--pri2); padding:.75rem 1rem; margin:.75rem 0}
+    .prompt-block{background:var(--card); border-left:5px solid var(--pri); padding:1rem; margin:1.25rem 0; position:relative; border-radius:6px; box-shadow:0 1px 0 rgba(0,0,0,0.04)}
+    .copy-btn{position:absolute; top:.5rem; right:.5rem; background:var(--btn); color:#fff; border:none; padding:.35rem .7rem; border-radius:4px; cursor:pointer}
+    .copy-btn:focus{outline:2px solid #fff; outline-offset:2px}
+    code{display:block; background:var(--code); padding:.7rem .8rem; margin-top:.5rem; white-space:pre-wrap; border-radius:4px; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace}
+    .btn-top{display:inline-block; background:var(--pri2); color:#fff; padding:.6rem 1.1rem; margin:.5rem 0 1rem; text-decoration:none; border-radius:6px}
+    .grid{display:grid; gap:1rem; grid-template-columns:1fr}
+    @media (min-width:900px){ .grid{grid-template-columns:1fr 1fr} }
+    .inline-actions{display:flex; gap:.5rem; margin-top:.6rem; flex-wrap:wrap}
+    .btn-secondary{display:inline-block; background:var(--pri); color:#fff; padding:.45rem .9rem; text-decoration:none; border-radius:6px}
+    footer{margin-top:3rem; font-size:.9rem; color:#555}
+  </style>
+</head>
+<body>
+  <!-- Top navigation buttons for various AI tools -->
+  <a class="btn-top" href="https://chat.openai.com/" target="_blank" rel="noopener">Ava ChatGPT</a>
+  <a class="btn-top" href="https://elicit.org/" target="_blank" rel="noopener">Ava Elicit</a>
+  <a class="btn-top" href="https://perplexity.ai/" target="_blank" rel="noopener">Ava Perplexity</a>
+  <a class="btn-top" href="https://gemini.google.com/" target="_blank" rel="noopener">Ava Gemini</a>
+  <a class="btn-top" href="https://typeset.io/scispace" target="_blank" rel="noopener">Ava SciSpace</a>
+  
+  <h1>TI-tööriistade soovitused õendusjuhendite koostamiseks</h1>
+  <p class="lead">Kopeeri sobiv prompt ja kasuta seda AI-tööriistas (nt ChatGPT). Plokid on järjestatud tüüpilise töövoo järgi: PICO → otsing → analüüs → GRADE tabel → kokkuvõte → visuaal </p>
+
+  <div class="tip">Näpunäide: asenda kohad nagu [Siia abstrakt] ja [Teema kirjeldus] oma sisuga. Kõik nupud kopeerivad ploki teksti lõikelauale.</div>
+
+  <h2>1) PICO mudeli loomine</h2>
+  <div class="prompt-block">
+    <p>Kirjelda uurimisteema PICO mudeli kujul, et raamida uurimisküsimused.</p>
+    <button class="copy-btn" onclick="copyPrompt(this)" aria-label="Kopeeri PICO prompt">Kopeeri</button>
+    <code>Paku teema põhjal PICO mudel ja 3 uurimisküsimuse varianti.
+Teema: [Teema kirjeldus]
+Tagasta:
+- P:
+- I:
+- C:
+- O:
+- Uurimisküsimus 1:
+- Uurimisküsimus 2:
+- Uurimisküsimus 3:</code>
+  </div>
+
+  <h2>2) Loo otsingustringid erinevatesse andmebaasidesse</h2>
+  <div class="grid">
+    <div class="prompt-block">
+      <p>Genereeri otsingustringid PubMedi jaoks, lisades laiemaid ja kitsamaid variante ning filtreid.</p>
+      <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+      <code>Genereeri PubMedi päringud PICO põhjal. Lisa 2 laiema ja 2 kitsama variandi mustandit ning valmidus filtriteks: aastad, inimesed, keel, artikli tüüp.
+PICO:
+[Siia uurimisküsimus]</code>
+    </div>
+    <div class="prompt-block">
+      <p>Genereeri otsingustringid Google Scholari jaoks, lisades kuupäevavahemikud ja sünonüümid.</p>
+      <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+      <code>Genereeri Google Scholari päringud ja täpsustavad märksõnad. Lisa 2 kuupäevavahemiku varianti ja 3 sünonüümide komplekti.
+PICO:
+[Siia uurimisküsimus]</code>
+    </div>
+        <div class="prompt-block">
+      <p>Genereeri otsingustringid EBSCO jaoks, lisades laiemaid ja kitsamaid variante ning filtreid.</p>
+      <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+      <code>Genereeri EBSCO Basic Search päringud PICO põhjal. Lisa 2 laiema ja 2 kitsama variandi mustandit. Kasuta Boolean-operaatoreid (AND, OR, NOT), jutumärke fraaside jaoks ja vajadusel trunki (näit. nurs*).</code>
+    </div>
+  </div>
+
+  <h2>3) (valikuline) Analüüsi valitud artiklid</h2>
+  <div class="prompt-block">
+    <p>Ava <b>Elicit</b> (või mõni alternatiiv), vali <i>Upload and extract</i> ning laadi üles artiklid. Seejärel kasuta pakutud välju (nt <i>Main findings</i>, <i>Number of subjects</i>, <i>Limitations</i>, <i>Outcomes measured</i>) analüüsi läbiviimiseks.</p>
+    <div class="inline-actions" aria-label="Kiirlingid">
+      <a class="btn-secondary" href="https://elicit.org/" target="_blank" rel="noopener" aria-label="Ava Elicit analüüsi jaoks">Ava Elicit</a>
+    </div>
+  </div>
+
+  <h2>4) Koosta GRADE hindamistabel</h2>
+  <div class="prompt-block">
+    <p>Hinda artiklite kvaliteeti GRADE domeenide alusel, et määrata tõendusmaterjali usaldusväärsus.</p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Koosta antud uurimisküsimuse põhjal: [sisesta samm 1) PICO uurimisküsimus] GRADE järgi hindamistabel. 
+
+Kasuta näitena järgmist tabelistruktuuri (samad veerud, jne).
+[näidistabel]
+</code>
+  </div>
+
+  <h2>5) Kokkuvõte kirjandusest</h2>
+  <div class="prompt-block">
+    <p>Loo kokkuvõte antud artiklite põhjal.</p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code>Loo kokkuvõte antud sisendi põhjal. Ära lisa uusi väiteid, mida allikad ei toeta.
+
+Sisend: [artiklid, tabeliread, muu sisend]</code>
+  </div>
+
+  <h2>6) Infograafika, jooniste jm visuaalide loomine</h2>
+  <div class="prompt-block">
+    <p>Loo visuaalne infograafika või joonis (nt vooskeem, diagramm või ülevaategraafik), et edasi anda kokkuvõtete sisu. Kasuta Canvas / Lõuend nuppu</p>
+    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+    <code> Ava Canvas järgmine kokkuvõte [kokkuvõtte tekst või fail] </code>
+    <div class="inline-actions" aria-label="Kiirlingid">
+      <a class="btn-secondary" href="https://gemini.google.com/" target="_blank" rel="noopener" aria-label="Ava Gemini infograafika jaoks">Ava Gemini</a>
+    </div>
+  </div>
+
+  <footer>
+    Valminud õdedele ja juhendite töörühmadele. AI toetab struktuuri ja mustandeid, lõplikud otsused ja vastutus jäävad ekspertrühmale.
+  </footer>
+
+  <script>
+    function copyPrompt(button){
+      const text = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(text).then(()=>{
+        const original = button.innerText;
+        button.innerText = "Kopeeritud!";
+        setTimeout(()=> button.innerText = original, 1600);
+      }).catch(()=>{
+        alert("Kopeerimine ei õnnestunud. Proovi uuesti.");
+      });
+    }
+  </script>
+</body>
+</html>
