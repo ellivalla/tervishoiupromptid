@@ -121,26 +121,41 @@ Nõrk – ebakindlus tõendite või rakendatavuse osas</code>
 </div>
 
 
+<h2>7) Kliinilise juhendi koostamine</h2>
+<div class="prompt-block">
+  <p>Koosta allikate ja GRADE hindamistabeli põhjal kliiniline juhend, mis on mõeldud tervishoiutöötajatele praktiliseks kasutamiseks. Tulemus olgu süsteemne ja käsiraamatulik, sobiv õenduse või erakorralise meditsiini juhendisse.</p>
+  <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+  <code>
+Koosta allikate ja GRADE hindamistabeli põhjal kliiniline juhend, mis on mõeldud tervishoiutöötajatele praktiliseks kasutamiseks. 
 
-  <h2>4) Koosta GRADE hindamistabel</h2>
-  <div class="prompt-block">
-    <p>Hinda artiklite kvaliteeti GRADE domeenide alusel, et määrata tõendusmaterjali usaldusväärsus.</p>
-    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
-    <code>Koosta antud uurimisküsimuse põhjal: [sisesta samm 1) PICO uurimisküsimus] GRADE järgi hindamistabel. 
+Kasuta alljärgnevat struktuuri ja vormista tulemus selge, süsteemse ning käsiraamatulikuna (õenduse või erakorralise meditsiini kontekstis). Vajadusel lisa tabeleid või nummerdatud samme. Ära kasuta pikki kriipse. Lisa iga peatüki lõppu GRADE viide koos soovituse tugevuse sümbolitega (⬆⬆⬆⬆, ⬆⬆⬆⬇, ⬆⬆⬇⬇, ⬆⬇⬇⬇).
 
-Kasuta näitena järgmist tabelistruktuuri (samad veerud, jne).
-[näidistabel]
-</code>
+Struktuur:
+1.1. Sissejuhatus  
+1.2. Terminid ja mõisted  
+1.3. Näidustused ja vastunäidustused  
+1.4. Vajaminevad vahendid  
+1.5. Ettevalmistavad tegevused  
+1.6. Protseduuri teostamine (võimalusel samm-sammuline kirjeldus)  
+1.7. Tüsistused ja võimalikud vead  
+1.8. Patsiendi ja lähedaste juhendamine  
+
+Juhised:  
+- Tõlgenda GRADE tabeli infot nii, et iga jaotuse lõppu lisatakse “Tõendus ja viited:” koos allika nime ja GRADE sümbolitega.  
+- Kui mõne jaotise kohta pole piisavat infot, kirjuta „Ei rakendu“ või „Puudub tõendus“.  
+- Hoia toon professionaalne ja neutraalne.  
+- Väljundi vormistus sobigu kliinilise juhendi dokumendiks või veebilehe sisuplokiks (nt Markdown või HTML).  
+- Ära lisa täiendavat sisu väljapoole struktuuri.  
+
+Näide pealkirjastamiseks:
+🩺 [Protseduuri nimi] – kliiniline juhend
+  </code>
+  <div class="inline-actions" aria-label="Kiirlingid">
+    <a class="btn-secondary" href="https://chat.openai.com/" target="_blank" rel="noopener" aria-label="Ava ChatGPT juhendi koostamiseks">Ava ChatGPT</a>
   </div>
+</div>
 
-  <h2>5) Kokkuvõte kirjandusest</h2>
-  <div class="prompt-block">
-    <p>Loo kokkuvõte antud artiklite põhjal.</p>
-    <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
-    <code>Loo kokkuvõte antud sisendi põhjal. Ära lisa uusi väiteid, mida allikad ei toeta.
 
-Sisend: [artiklid, tabeliread, muu sisend]</code>
-  </div>
 
   <h2>6) Infograafika, jooniste jm visuaalide loomine</h2>
   <div class="prompt-block">
