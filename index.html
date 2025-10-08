@@ -28,10 +28,12 @@
 <body>
   <!-- Top navigation buttons for various AI tools -->
   <a class="btn-top" href="https://chat.openai.com/" target="_blank" rel="noopener">Ava ChatGPT</a>
+  <a class="btn-top" href="https://www.scopus.com/ai" target="_blank" rel="noopener">Ava Scopus AI</a>
   <a class="btn-top" href="https://elicit.org/" target="_blank" rel="noopener">Ava Elicit</a>
   <a class="btn-top" href="https://perplexity.ai/" target="_blank" rel="noopener">Ava Perplexity</a>
   <a class="btn-top" href="https://gemini.google.com/" target="_blank" rel="noopener">Ava Gemini</a>
   <a class="btn-top" href="https://typeset.io/scispace" target="_blank" rel="noopener">Ava SciSpace</a>
+
   
   <h1>TI-tööriistade soovitused õendusjuhendite koostamiseks</h1>
   <p class="lead">Kopeeri sobiv prompt ja kasuta seda AI-tööriistas (nt ChatGPT). Plokid on järjestatud tüüpilise töövoo järgi: PICO → otsing → analüüs → GRADE tabel → kokkuvõte → visuaal </p>
@@ -75,6 +77,18 @@ PICO:
       <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
       <code>Genereeri EBSCO Basic Search päringud PICO põhjal. Lisa 2 laiema ja 2 kitsama variandi mustandit. Kasuta Boolean-operaatoreid (AND, OR, NOT), jutumärke fraaside jaoks ja vajadusel trunki (näit. nurs*).</code>
     </div>
+
+      <div class="prompt-block">
+  <p>Genereeri otsingupäring Scopus AI jaoks, mis sobib sisestamiseks Scopus AI liidesesse (https://www.scopus.com/ai).</p>
+  <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+  <code>Kirjuta Scopus AI jaoks hästi struktureeritud loomuliku keele päring, mis põhineb PICO mudelil.
+Fookus olgu uuringutel, mis analüüsivad [I] mõju [O]-le [P] populatsioonis võrreldes [C]-ga.
+Lisa ajavahemik (nt 2022–praegu) ja palu Scopus AI-l esile tuua peamised tulemused, uuringutüübid ja kliinilised järeldused.
+
+Näide:
+"Summarize recent research on the accuracy and safety of using pH testing to verify nasogastric tube placement in adult patients, compared with auscultation or X-ray confirmation. Highlight the main findings, study designs, and clinical recommendations from 2022 onward."</code>
+</div>
+
   </div>
 
   <h2>3) (valikuline) Analüüsi valitud artiklid</h2>
@@ -84,6 +98,36 @@ PICO:
       <a class="btn-secondary" href="https://elicit.org/" target="_blank" rel="noopener" aria-label="Ava Elicit analüüsi jaoks">Ava Elicit</a>
     </div>
   </div>
+
+  <h2>4) Koosta GRADE hindamistabel</h2>
+<div class="prompt-block">
+  <p>Hinda artiklite kvaliteeti GRADE domeenide alusel, et määrata tõendusmaterjali usaldusväärsus.</p>
+  <button class="copy-btn" onclick="copyPrompt(this)">Kopeeri</button>
+  <code>Koosta allikate põhjal GRADE järgi hindamistabel. Kasuta näitena järgmist tabelistruktuuri (samad veerud, jne).
+
+Allikas
+Uuringu tüüp
+Süsteemne viga (Risk of bias)
+Järjekindlus (consistency)
+Täpsus (precision)
+Seostatavus/ otsene vastavus (directness)
+Usaldus-väärsus (tõendite kvaliteet) (certainty / quality)*
+
+Efekti suurus (magnitude of effect)
+Soovituse tugevus (strength of recommendation)**
+
+
+*Usaldusväärsus:
+    Kõrge ⬆⬆⬆⬆
+    Mõõdukas ⬆⬆⬆⬇
+    Madal ⬆⬆⬇⬇
+    Väga madal ⬆⬇⬇⬇
+
+**Soovituse tugevus:
+Tugev – suur kindlus, et kasu ületab kahju
+Nõrk – ebakindlus tõendite või rakendatavuse osas</code>
+</div>
+
 
   <h2>4) Koosta GRADE hindamistabel</h2>
   <div class="prompt-block">
